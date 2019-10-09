@@ -3,6 +3,7 @@ Turn text into a uselessly complex polynomials
 
 # Sample input/output:
 
+```
 Enter word to get polynomial: 
 72 H [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 72]
 101 e [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 101]
@@ -63,9 +64,11 @@ Python: (-10303.0/9979200.0)*(x**11) + (4073.0/64800.0)*(x**10) + (-67169.0/4032
 C/C++: (-10303.0/9979200.0)*pow(x,11) + (4073.0/64800.0)*pow(x,10) + (-67169.0/40320.0)*pow(x,9) + (108929.0/4320.0)*pow(x,8) + (-36326569.0/151200.0)*pow(x,7) + (32342993.0/21600.0)*pow(x,6) + (-445599449.0/72576.0)*pow(x,5) + (210189113.0/12960.0)*pow(x,4) + (-3951504773.0/151200.0)*pow(x,3) + (20582609.0/900.0)*pow(x,2) + (-12420907.0/1540.0)*pow(x,1) + (72.0)*pow(x,0)
 
 Java: (-10303.0/9979200.0)*Math.pow(x,11) + (4073.0/64800.0)*Math.pow(x,10) + (-67169.0/40320.0)*Math.pow(x,9) + (108929.0/4320.0)*Math.pow(x,8) + (-36326569.0/151200.0)*Math.pow(x,7) + (32342993.0/21600.0)*Math.pow(x,6) + (-445599449.0/72576.0)*Math.pow(x,5) + (210189113.0/12960.0)*Math.pow(x,4) + (-3951504773.0/151200.0)*Math.pow(x,3) + (20582609.0/900.0)*Math.pow(x,2) + (-12420907.0/1540.0)*Math.pow(x,1) + (72.0)*Math.pow(x,0)
-
+```
 
 # Usage Examples
+
+## Java
 
 ```java
 public class Main
@@ -79,6 +82,7 @@ public class Main
 }
 ```
 
+## C/C++
 
 ```c
 #include <math.h>
@@ -96,6 +100,7 @@ int main(void) {
 }
 ```
 
+## Python
 
 ```python
 for x in range(0, 10):
@@ -106,6 +111,7 @@ for x in range(0, 10):
 
 
 # Warnings
-
+```
 I don't recommend massively long words or words that have a high difference between their ascii values.
 For example the difference between A (65) to z (122) is 57, and this large number gap forces the polynomial to use significanlty larger coefficients to compensate.
+```
