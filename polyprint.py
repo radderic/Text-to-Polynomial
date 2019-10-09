@@ -16,9 +16,7 @@ def genMatrix(s):
 
 print("Enter word to get polynomial: ")
 words = input()
-word_len = len(words)
 m = genMatrix(words)
-
 print("\nMatrix to evaluate: \n")
 mat = Matrix(m)
 pprint(mat)
@@ -26,15 +24,15 @@ rref = mat.rref()
 print("\nRow Reduced Matrix: \n")
 pprint(rref)
 
-print("----------------------------------------------------------------")
+word_len = len(words)
+print("\n----------------------------------------------------------------")
 print("\nEquation for \"{w}\" where the range of x integers from 0 to {l}: \n".format(w=words, l=word_len))
 print("----------------------------------------------------------------")
-i = 0
 g_term = ""
 c_term = ""
 p_term = ""
 j_term = ""
-for c in words:
+for i in range(0, word_len):
     g_term += "(" + str(rref[0][word_len+(i*(word_len+1))]) + ".0)*(x^" + str(word_len-i-1) + ")"
     c_term += "(" + str(rref[0][word_len+(i*(word_len+1))]) + ".0)*pow(x," + str(word_len-i-1) + ")"
     p_term += "(" + str(rref[0][word_len+(i*(word_len+1))]) + ".0)*(x**" + str(word_len-i-1) + ")"
@@ -44,7 +42,6 @@ for c in words:
         c_term += " + "
         p_term += " + "
         j_term += " + "
-    i += 1
 
 print("\nGeneral:", g_term.replace("/", ".0/"))
 print("\nPython:", p_term.replace("/", ".0/"))
